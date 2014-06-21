@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Test deck</title>
+  <title>Body Mass Index Calculator</title>
   <meta charset="utf-8">
-  <meta name="description" content="Test deck">
-  <meta name="author" content="">
+  <meta name="description" content="Body Mass Index Calculator">
+  <meta name="author" content="T Ho">
   <meta name="generator" content="slidify" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -13,8 +13,7 @@
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
-  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
-
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
   
   <!-- Grab CDN jQuery, fall back to local if offline -->
   <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
@@ -32,9 +31,9 @@
     <!-- LOGO SLIDE -->
         <slide class="title-slide segue nobackground">
   <hgroup class="auto-fadein">
-    <h1>Test deck</h1>
-    <h2></h2>
-    <p><br/></p>
+    <h1>Body Mass Index Calculator</h1>
+    <h2>Give advice on the body weight</h2>
+    <p>T Ho<br/></p>
   </hgroup>
   <article></article>  
 </slide>
@@ -43,13 +42,39 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>Read-And-Delete</h2>
+    <h2>Introduction</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This document is produced by Slidify (the next slide will show some cool interactive graph produced using R)
+Body Mass Index is an index used by health professionals to guage your general body weight/Fat Mass.  It is derived by the following formula</p>
+
+<pre><code>      BMI =  Body weight (in Kg) / (Height in meter)^2
+</code></pre>
+
+<p>Meaning of BMI        </p>
+
+<Table>
+<TR><TD>Range</TD><TD>Meaning</TD></TR>
+<TR><TD>>=30</TD><TD>Obese</TD></TR>
+<TR><TD>>=25 & <=29.9</TD><TD>Overweight</TD></TR>
+<TR><TD>>=18.5 & <=24.9</TD><TD>Normal</TD></TR>
+<TR><TD><=18.4</TD><TD>Underweight</TD></TR>
+
+</Table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>How to use the BMI Calculator</h2>
   </hgroup>
   <article data-timings="">
     <ol>
-<li>Edit YAML front matter</li>
-<li>Write using R Markdown</li>
-<li>Use an empty line followed by three dashes to separate slides!</li>
+<li>On the side bar of the application, user can entire weight, height and the unit in either imperial or metric systems (ie lb vs Kg,  inch vs cm)</li>
+<li>The app will do the conversion of the unit and calculate the BMI index</li>
+<li>Based on the index, it will display comment of the weight status (obese, overweight etc)</li>
 </ol>
 
   </article>
@@ -58,13 +83,37 @@
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Slide 2</h2>
+    <h2>Implementation details.</h2>
   </hgroup>
   <article data-timings="">
-    <pre><code class="r">plot(1:10, 1:10)
+    <ol>
+<li><p>It is implementation with some form function</p>
+
+<ul>
+<li>user can enter numeric data and use the drop down box to select which measurement system</li>
+<li>either in Kg or lb</li>
+<li>either in inch or cm</li>
+<li>you can choose a combination of anything , eg body weight in lb and height in cm</li>
+</ul></li>
+<li><p>Data collected through the input</p></li>
+<li><p>It is converted in the server.R to the common unit, so calculation can be made with one common formula.  (This is in the function BMI)</p></li>
+<li><p>Another function in server.R is msg which will take the BMI value and display the comment about weight status (obese, overweigt etc)</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Demonstrate how R code can be run interactively in slidified document</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">data(mtcars)
+pairs(mtcars, panel = panel.smooth)
 </code></pre>
 
-<p><img src="assets/fig/unnamed-chunk-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
+<p><img src="figure/unnamed-chunk-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
 
   </article>
   <!-- Presenter Notes -->
@@ -76,14 +125,26 @@
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Read-And-Delete'>
+        data-slide=1 title='Introduction'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Slide 2'>
+        data-slide=2 title='How to use the BMI Calculator'>
          2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Implementation details.'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Demonstrate how R code can be run interactively in slidified document'>
+         4
       </a>
     </li>
   </ul>
